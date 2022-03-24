@@ -1,0 +1,27 @@
+{
+  "name": "cointoss_statistics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishi720/cointoss_statistics.git"
+  },
+  "author": "ishi720",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ishi720/cointoss_statistics/issues"
+  },
+  "homepage": "https://github.com/ishi720/cointoss_statistics#readme",
+  "devDependencies": {
+    "webpack": "5.x.x",
+    "webpack-cli": "4.x.x"
+  },
+  "dependencies": {
+    "chart.js": "2.x.x"
+  }
+}
