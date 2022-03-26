@@ -2,27 +2,13 @@ import Chart from 'chart.js';
 
 var ctx = document.getElementById('mychart');
 var myChart = new Chart(ctx, {
-  type: 'line',
+  type: 'bar',
   data: {
-    labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     datasets: [{
-      label: 'Red',
-      data: [20, 35, 40, 30, 45, 35, 40],
-      borderColor: '#f88',
-    }, {
-      label: 'Green',
-      data: [20, 15, 30, 25, 30, 40, 35],
-      borderColor: '#484',
-    }, {
-      label: 'Blue',
-      data: [30, 25, 10, 5, 25, 30, 20],
-      borderColor: '#48f',
+      label: 'コインが表になった回数',
+      data: [86, 978, 4439, 11538, 20787, 24404, 20559, 11709, 4347, 1054, 99],
+      backgroundColor: "#ff9800",
     }],
-  },
-  options: {
-    y: {
-      min: 0,
-      max: 60,
-    },
-  },
+  }
 });
