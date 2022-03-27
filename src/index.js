@@ -84,3 +84,36 @@ function renderChart() {
     myChart.update();
 }
 window.renderChart = renderChart;
+
+
+
+
+//順列
+function permutation(n,r) {
+  for(var i=0,res=1;i<r;i++) {
+    res *= n-i;
+  }
+  return res;
+}
+//組み合わせ
+function combination(n,r) {
+  return permutation(n, r) / permutation(r, r);
+}
+
+//べき乗
+function exponentiation(x,y) {
+  return x ** y;
+}
+
+//(combination(10,5) / exponentiation(2,10)) * 100
+//(combination(10,4) / exponentiation(2,10)) * 100
+//(combination(10,3) / exponentiation(2,10)) * 100
+//(combination(10,2) / exponentiation(2,10)) * 100
+
+for (var i=0;i<=coinTossCount;i++){
+  console.log([i, Math.round((combination(coinTossCount,i) / exponentiation(2,coinTossCount)) * 1000000) /10000 ]);
+}
+
+
+window.exponentiation = exponentiation;
+window.combination = combination;
