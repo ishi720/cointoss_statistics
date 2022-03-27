@@ -1,13 +1,14 @@
 ### 概要
 
-X枚コイントスをY回実行した結果が「表」になった回数をグラフ表示を行う。
+X回のコイントスをY回実行した結果が「表」になった回数を計測しグラフ表示を行う。
 
-### Github Pages
+### Sample page
 
-https://ishi720.github.io/cointoss_statistics/dist/
+- Github pages: https://ishi720.github.io/cointoss_statistics/dist/
+- Heroku: https://cointoss-statistics.herokuapp.com/
 
-### セットアップ
+### Setup
 
-```
-npm run start
+```bash
+yarm run start
 ```
