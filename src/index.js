@@ -65,7 +65,9 @@ var myChart = new Chart(ctx, {
     }
 });
 
-function renderChart(trialCount,coinTossCount) {
+function renderChart() {
+  var trialCount = document.getElementsByClassName("trialCount")[0].value;
+  var coinTossCount = document.getElementsByClassName("coinTossCount")[0].value;
   var [labelsArray,dataArray] = createData(trialCount,coinTossCount);
   myChart.data.labels = labelsArray;
   myChart.data.datasets[0].data = dataArray;

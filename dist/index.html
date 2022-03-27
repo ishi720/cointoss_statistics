@@ -7,7 +7,13 @@
 </head>
 <body>
     <div>
-        <button onclick="renderChart(100000,100)">ボタン</button>
+        <input type="number" class="coinTossCount" min="1" max="9999" value="100">
+        回のコイントスを
+        <input type="number" class="trialCount" min="1" max="9999999" value="100000">
+        回実行した結果が「表」になった回数を計測。
+    </div>
+    <div>
+        <button onclick="renderChart()">計測</button>
     </div>
 
     <div>
