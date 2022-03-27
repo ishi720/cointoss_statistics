@@ -1,4 +1,5 @@
 import Chart from 'chart.js';
+import 'chota/dist/chota.min.css';
 
 function coinToss(){
     var coin = ['表','裏'];
@@ -58,7 +59,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: labelsArray,
         datasets: [{
-          label: 'コインが表になった回数',
+          label: 'コインが〇回表になった回数',
           data: data,
           backgroundColor: "#ff9800",
         }],

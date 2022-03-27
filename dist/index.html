@@ -6,18 +6,19 @@
     <title>cointoss_statistics</title>
 </head>
 <body>
-    <div>
-        <input type="number" class="coinTossCount" min="1" max="9999" value="100">
-        回のコイントスを
-        <input type="number" class="trialCount" min="1" max="9999999" value="100000">
-        回実行した結果が「表」になった回数を計測。
+    <div class="row" style="padding: 5px 0;">
+        <h2 class="col-12" style="text-align: center;box-shadow: 0px 2px 2px #d3d3d3;">コイントスの統計</h2>
     </div>
-    <div>
-        <button onclick="renderChart()">計測</button>
+    <div style="padding:10px;background: #f3f3f6;border-radius: 3px;margin: 10px;line-height: 3;">
+        <input type="number" class="coinTossCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999" value="100">
+        回のコイントスを
+        <input type="number" class="trialCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999999" value="100000">
+        回実行した結果が「表」になる回数を計測し棒グラフで表示。
+        <button class="button dark" onclick="renderChart()">実行</button>
     </div>
 
-    <div>
-        <canvas id="mychart"></canvas>
+    <div style="padding:10px;margin:10px;text-align: center;">
+        <canvas id="mychart" style="max-width: 1000px;"></canvas>
     </div>
 </body>
 </html>
