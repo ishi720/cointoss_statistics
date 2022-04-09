@@ -10,5 +10,5 @@ X回のコイントスをY回実行した結果が「表」になった回数を
 ### Setup
 
 ```bash
-yarm run start
+yarn run start
 ```
