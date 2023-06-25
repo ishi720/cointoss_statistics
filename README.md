@@ -5,7 +5,6 @@ X回のコイントスをY回実行した結果が「表」になった回数を
 ### Sample page
 
 - Github pages: https://ishi720.github.io/cointoss_statistics/dist/
-- Heroku: https://cointoss-statistics.herokuapp.com/
 
 ### Setup
 
