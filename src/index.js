@@ -3,23 +3,32 @@ import 'chota/dist/chota.min.css';
 
 /**
  * ベルヌーイ分布
- * @param {number} p 確率 (0~1)
+ * @param {number} p 確率 (0.0 ~ 1.0)
+ * @return {boolean} true:成功, false:失敗
  */
 const bernoulliDistribution = (p) => Math.random() < p;
+
+/**
+ * 二項分布
+ * @param {number} n 試行回数
+ * @param {number} p 確率 (0.0 ~ 1.0)
+ * @return {number} 成功した回数
+ */
+const binomialDistribution = (n, p) => {
+    let count = 0;
+    for (let i = 0; i < n; i++) {
+      if (bernoulliDistribution(p)) count++;
+    }
+    return count;
+}
 
 const createData = (trialCount,coinTossCount) => {
     //trialCountの数だけ実施
     let coinTossRes = [];
     for (let i=0; i<trialCount; i++) {
-        let omote = 0;
 
-        //コイントスのシミュレーション
-        for (let j=0; j<coinTossCount; j++) {
-            if (bernoulliDistribution(0.5)) {
-                omote++;
-            }
-        }
-        //表になった回数を記録する
+        let omote = binomialDistribution(coinTossCount, 0.5);
+
         coinTossRes.push(omote);
     }
 
@@ -73,7 +82,7 @@ let myChart = new Chart(ctx, {
     }
 });
 
-function renderChart() {
+const renderChart = () => {
     trialCount = document.getElementsByClassName("trialCount")[0].value;
     coinTossCount = document.getElementsByClassName("coinTossCount")[0].value;
     let [labelsArray,dataArray] = createData(trialCount,coinTossCount);
@@ -100,5 +109,5 @@ window.renderChart = renderChart;
 //   return x ** y;
 // }
 
-window.exponentiation = exponentiation;
-window.combination = combination;
+// window.exponentiation = exponentiation;
+// window.combination = combination;
