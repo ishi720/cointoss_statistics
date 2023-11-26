@@ -12,9 +12,9 @@
     <div style="padding:10px;background: #f3f3f6;border-radius: 3px;margin: 10px;line-height: 3;">
         <input type="number" class="coinTossCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999" value="100">
         回のコイントスを
-        <input type="number" class="trialCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999999" value="100000">
+        <input type="number" class="trialCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999999" value="10000">
         回実行した結果が「表」になる回数を計測し棒グラフで表示。
-        <button class="button dark" onclick="renderChart()">実行</button>
+        <button class="button dark" onclick="updateChart()">実行</button>
     </div>
 
     <div style="padding:10px;margin:10px;text-align: center;">
@@ -22,5 +22,6 @@
     </div>
 </body>
 </html>
+
 
 <script src="./bundle.js"></script>
