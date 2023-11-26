@@ -22,14 +22,14 @@
   },
   "homepage": "https://github.com/ishi720/cointoss_statistics#readme",
   "devDependencies": {
-    "css-loader": "^6.7.1",
-    "style-loader": "^3.3.1",
+    "css-loader": "6.x.x",
+    "style-loader": "3.x.x",
     "webpack": "5.x.x",
     "webpack-cli": "4.x.x"
   },
   "dependencies": {
     "chart.js": "2.x.x",
-    "chota": "^0.8.0",
+    "chota": "0.9.x",
     "express": "4.x.x"
   }
 }
