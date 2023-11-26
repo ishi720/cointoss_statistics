@@ -22,43 +22,35 @@ const binomialDistribution = (n, p) => {
     return count;
 }
 
+/**
+ * グラフ表示用のデータを作成する
+ * @param {number} trialCount 試行回数
+ * @param {number} coinTossCount コイントスの回数
+ * @return {array} [ラベルの配列,データの配列]
+ */
 const createData = (trialCount,coinTossCount) => {
-    //trialCountの数だけ実施
-    let coinTossRes = [];
+    const graphData = Array(coinTossCount+1).fill(0);
+    let count = 0;
+
+    // データ表示用のラベルを生成する
+    const labelsArray = [...Array(coinTossCount+1)].map((_, i) => i);
+
+    // コイントスを実際に行い二項分布のデータを生成する
     for (let i=0; i<trialCount; i++) {
-
-        let omote = binomialDistribution(coinTossCount, 0.5);
-
-        coinTossRes.push(omote);
+        count = binomialDistribution(coinTossCount, 0.5);
+        graphData[count] = graphData[count] + 1
     }
 
-    // 重複している値をカウント
-    let count = {};
-    for (let i = 0; i<coinTossRes.length; i++) {
-      let elm = coinTossRes[i];
-      count[elm] = (count[elm] || 0) + 1;
-    }
-
-    // データ生成
-    let labelsArray = [];
-    let data = [];
-    for (let i=0; i<=coinTossCount; i++) {
-        labelsArray.push(i);
-        if (count[i]) {
-            data.push(count[i]);
-        } else {
-            data.push(0);
-        }
-    }
-    return [labelsArray,data]
+    // 結果を返却
+    return [labelsArray,graphData]
 }
+
+
+
 
 let trialCount = 100000;
 let coinTossCount = 100;
-
 let [labelsArray,data] = createData(trialCount,coinTossCount);
-
-
 const ctx = document.getElementById('mychart');
 
 let myChart = new Chart(ctx, {
@@ -83,8 +75,9 @@ let myChart = new Chart(ctx, {
 });
 
 const renderChart = () => {
-    trialCount = document.getElementsByClassName("trialCount")[0].value;
-    coinTossCount = document.getElementsByClassName("coinTossCount")[0].value;
+    trialCount = Number(document.getElementsByClassName("trialCount")[0].value);
+    coinTossCount = Number(document.getElementsByClassName("coinTossCount")[0].value);
+    console.log(trialCount,coinTossCount);
     let [labelsArray,dataArray] = createData(trialCount,coinTossCount);
     myChart.data.labels = labelsArray;
     myChart.data.datasets[0].data = dataArray;
