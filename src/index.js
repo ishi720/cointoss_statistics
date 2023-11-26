@@ -1,24 +1,22 @@
 import Chart from 'chart.js';
 import 'chota/dist/chota.min.css';
 
-const coinToss = () => {
-    const coin = ['表','裏'];
-    return coin[Math.floor(Math.random() * coin.length)];
-}
+/**
+ * ベルヌーイ分布
+ * @param {number} p 確率 (0~1)
+ */
+const bernoulliDistribution = (p) => Math.random() < p;
 
 const createData = (trialCount,coinTossCount) => {
     //trialCountの数だけ実施
     let coinTossRes = [];
     for (let i=0; i<trialCount; i++) {
         let omote = 0;
-        let ura = 0;
 
-        //コイントスをcoinTossCountの数だけ実施
+        //コイントスのシミュレーション
         for (let j=0; j<coinTossCount; j++) {
-            if (coinToss() == "表") {
+            if (bernoulliDistribution(0.5)) {
                 omote++;
-            } else {
-                ura++;
             }
         }
         //表になった回数を記録する
