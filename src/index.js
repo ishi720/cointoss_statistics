@@ -81,17 +81,14 @@ const myChart = new Chart(ctx, {
             xAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: "コイントスを"+ coinTossCount +"回実施し表になった数回"
+                    labelString: "コインを"+ coinTossCount +"枚投げた時に表になった数回"
                 },
             }],
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: "事象の回数を積み上げ"
-                },
-                ticks: {
-　　　　　　　　　　　max: Math.round(trialCount / 10),
-　　　　　　　　　}
+                    labelString: "事象の回数"
+                }
             }],
         }
     }

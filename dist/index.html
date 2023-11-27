@@ -9,12 +9,15 @@
     <div class="row" style="padding: 5px 0;">
         <h2 class="col-12" style="text-align: center;box-shadow: 0px 2px 2px #d3d3d3;">コイントスの統計</h2>
     </div>
-    <div style="padding:10px;background: #f3f3f6;border-radius: 3px;margin: 10px;line-height: 3;">
+    <div style="text-align: center;padding:10px;background: #f3f3f6;border-radius: 3px;margin: 10px;line-height: 3;">
+        コインを
         <input type="number" class="coinTossCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999" value="100">
-        回のコイントスを
+        枚投げる。その試行を
         <input type="number" class="trialCount" style="width: 100px;text-align: center;display: inline-block;" min="1" max="9999999" value="10000">
-        回実行した結果が「表」になる回数を計測し棒グラフで表示。
-        <button class="button dark" onclick="updateChart()">実行</button>
+        回実行し、コインが「表」になった回数を計測
+        <div style="text-align: center;">
+            <button class="button dark" onclick="updateChart()">実行</button>
+        </div>
     </div>
 
     <div style="padding:10px;margin:10px;text-align: center;">
